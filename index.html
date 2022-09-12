@@ -1,0 +1,174 @@
+#1
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Digital Clock</title>
+    </head>
+
+    <body onload="display()">
+
+        <h1>Digital Clock</h1>
+        <p id="time"></p>
+
+        <script>
+            function display() 
+            {
+                const today = new Date();
+                let h = today.getHours();
+                let m = today.getMinutes();
+                let s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('time').innerHTML =  h + ":" + m + ":" + s;
+                setTimeout(display, 1000);
+            }
+
+            function checkTime(i) 
+            {
+                if (i < 10) {i = "0" + i};
+                return i;
+            }
+
+        </script>
+    </body>
+</html>
+#2
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BG Color changer</title>
+    </head>
+
+    <body onload="color()">
+        <h1>Dynamic Background!</h1>
+        <script >
+            function color()
+            {
+                var red = Math.floor(Math.random()*255);
+                var blue = Math.floor(Math.random()*255);
+                var green = Math.floor(Math.random()*255);
+
+                var color = "rgb("+red+","+green+","+blue+")";
+
+                document.getElementsByTagName("body")[0].style = "background-color:"+color;
+                
+            }
+            setInterval(color,30000);
+            
+        </script>
+    </body>
+</html>
+#3
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Change font size</title>
+    </head>
+    <body>
+        <h1>Change Font size</h1>
+
+        <p id="para1" onmouseover="incSize()" onmouseout="decSize()"> Move cursor over me to zoom in....</p>
+
+        <script>
+            function incSize()
+            {
+                
+                document.getElementById("para1").style = "font-size : 28px";
+            }
+
+            function decSize()
+            {
+                document.getElementById("para1").style = "font-size : auto";
+            }
+            
+        </script>
+    </body>
+</html>
+#4
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Car</title>
+    </head>
+    <body>
+        <h1>Move a Car</h1>
+        <button type="button" onclick="moveRight()">Move Right</button>
+        <button type="button" onclick="stop()">Stop</button>
+
+        <img id="img" src="data:image/jpeg;base64,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">
+
+        <script>
+            function init()
+            {
+                imgObj = document.getElementById('img');
+                imgObj.style.position = 'relative';
+                imgObj.style.left = '0px';
+            }
+
+            function moveRight()
+            {
+                
+                imgObj.style.left = parseInt(imgObj.style.left)+1+'px';
+                animate = setTimeout('moveRight()',10);
+            }
+
+            function stop()
+            {
+                clearTimeout(animate);
+                imgObj.style.left = '0px'
+            }
+
+            window.onload = init()
+        </script>
+    </body>
+</html>
+#5
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student</title>
+    </head>
+    
+    <body onload="Student_arr()">
+        <h1>Student details</h1>
+        
+        <div id="out_before"></div>
+        <div id="out_after"></div>
+        
+        <script>    
+            function Student_arr()
+            {
+             var Student = [{name : 'John', r_num : 'URK20CS2060', dob : '20-apr-1995'},{name : 'Joseph',r_num : 'URK20CS2060',dob : '05-jan-1998'},{name : 'Ram',r_num : 'URK20CS2052',dob : '05-jan-2005'}];
+             
+                let text_before = " "
+                let text_after = " "
+                for(var i =0; i<Student.length;i++)
+                {
+
+                    let nam = Student[i].name;
+                    let reg = Student[i].r_num;
+                    let d_o_b = Student[i].dob;
+
+                    dob_slice = d_o_b.slice(7,11);
+                    year = parseInt(dob_slice);
+
+                    if(year < 2000)
+                    {
+                        text_before +=nam + "'s Register Number is " + reg+"<br>";
+                    }
+
+                    else if (year > 2000)
+                    {
+                        text_after +=nam + "'s Register Number is " + reg+"<br>";
+                    }
+   
+                }
+
+                document.getElementById('out_before').innerHTML ="<b><u>Student have date of birth before 2000</u></b><br>"+ text_before;
+                document.getElementById('out_after').innerHTML ="<br><b><u>Student have date of birth after 2000</u></b><br>"+ text_after;
+            }
+
+        </script>
+    </body>
+</html>
+
